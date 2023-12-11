@@ -28,10 +28,12 @@ namespace isRock.Template
                 //準備回覆訊息
                 if (LineEvent.type.ToLower() == "message" && LineEvent.message.type == "text")
                     responseMsg = $"你說了: {LineEvent.message.text}";
+                else if (LineEvent.type.ToLower() == "message" && LineEvent.message.type == "image")
+                {
+                    responseMsg = $"收到了圖片：大小：{(this.GetUserUploadedContent(LineEvent.message.id)).Length}";
+                }
                 else if (LineEvent.type.ToLower() == "message")
                     responseMsg = $"收到 event : {LineEvent.type} type: {LineEvent.message.type} ";
-                else if()
-                    
                 else
                     responseMsg = $"收到 event : {LineEvent.type} ";
                 //回覆訊息

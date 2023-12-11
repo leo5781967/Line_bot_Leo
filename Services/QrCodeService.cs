@@ -1,10 +1,13 @@
-﻿namespace Line_bot_Leo.Services
+﻿using ThoughtWorks.QRCode.Codec;
+using ThoughtWorks.QRCode.Codec.Data;
+
+namespace Line_bot_Leo.Services
 {
     public class QrCodeService
     {
-        public string DecodingQrCodeImg()
+        public string DecodingQrCodeImg(Byte[] bytes)
         {
-            if (CheckImgIsQrCode())
+            if (CheckImgIsQrCode(bytes))
             {
 
             }
@@ -12,8 +15,12 @@
         }
 
 
-        public bool CheckImgIsQrCode()
+        public bool CheckImgIsQrCode(Byte[] bytes)
         {
+            
+
+
+
 
             return true;
         }
